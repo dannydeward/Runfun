@@ -9,7 +9,7 @@ async function apiLogin(email, password) {
     datos.append("password", password);
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/token",
+        "https://runfun-0epk.onrender.com/token",
         {
             method: "POST",
             headers: {
@@ -32,7 +32,7 @@ async function apiLogin(email, password) {
 async function apiRegistrarUsuario(datos) {
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/usuarios",
+        "https://runfun-0epk.onrender.com/usuarios",
         {
             method: "POST",
             headers: {
@@ -54,7 +54,7 @@ async function apiRegistrarUsuario(datos) {
 async function apiDashboard(token){
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/me",
+        "https://runfun-0epk.onrender.com/me",
         {
             method: "GET",
             headers:{
@@ -75,7 +75,7 @@ async function apiDashboard(token){
 async function apiCrearEquipo(token, datos) {
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/equipos",
+        "https://runfun-0epk.onrender.com/equipos",
         {
             method: "POST",
             headers: {
@@ -95,7 +95,7 @@ async function apiCrearEquipo(token, datos) {
 async function apiVerMiEquipo(equipoId) {
 
     const respuesta = await fetch(
-        `http://127.0.0.1:8000/equipos/${equipoId}/detalle`
+        `https://runfun-0epk.onrender.com/equipos/${equipoId}/detalle`
     );
 
     const data = await respuesta.json();
@@ -110,7 +110,7 @@ async function apiVerMiEquipo(equipoId) {
 async function apiSalirDelEquipo(token) {
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/mi-equipo/salir",
+        "https://runfun-0epk.onrender.com/mi-equipo/salir",
         {
             method: "POST",
             headers: {
@@ -132,7 +132,7 @@ async function apiSalirDelEquipo(token) {
 async function apiEliminarEquipo(token, equipoId) {
 
     const respuesta = await fetch(
-        `http://127.0.0.1:8000/equipos/${equipoId}`,
+        `https://runfun-0epk.onrender.com/equipos/${equipoId}`,
         {
             method: "DELETE",
             headers: {
@@ -153,7 +153,7 @@ async function apiEliminarEquipo(token, equipoId) {
 async function apiAbrirRanking(equipoId) {
 
     const respuesta = await fetch(
-        `http://127.0.0.1:8000/equipos/${equipoId}/ranking`
+        `https://runfun-0epk.onrender.com/equipos/${equipoId}/ranking`
     );
 
     const data = await respuesta.json();
@@ -168,7 +168,7 @@ async function apiAbrirRanking(equipoId) {
 async function apiCrearCarrera(token, carrera) {
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/carreras",
+        "https://runfun-0epk.onrender.com/carreras",
         {
             method: "POST",
             headers: {

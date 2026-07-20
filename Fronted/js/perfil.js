@@ -3,7 +3,7 @@ async function abrirPerfil() {
     const token = localStorage.getItem("token");
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/me",
+        "https://runfun-0epk.onrender.com/me",
         {
             headers: {
                 "Authorization": "Bearer " + token
@@ -21,7 +21,7 @@ async function abrirPerfil() {
     id="preview_foto"
     <img
     id="preview_foto"
-    src="http://127.0.0.1:8000/uploads/perfiles/${data.foto || 'default.jpg'}"
+    src="https://runfun-0epk.onrender.com/uploads/perfiles/${data.foto || 'default.jpg'}"
     width="120", style="border-radius:50%; display:block; margin:auto;"
 >
   
@@ -83,7 +83,7 @@ async function guardarPerfil() {
     };
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/me",
+        "https://runfun-0epk.onrender.com/me",
         {
             method: "PUT",
             headers: {
@@ -105,7 +105,7 @@ if (archivo) {
     formData.append("foto", archivo);
 
     await fetch(
-        "http://127.0.0.1:8000/me/foto",
+        "https://runfun-0epk.onrender.com/me/foto",
         {
             method: "POST",
             headers: {

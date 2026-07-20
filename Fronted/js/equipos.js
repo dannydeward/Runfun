@@ -79,7 +79,7 @@ async function cargarEquipos() {
 
     const token = localStorage.getItem("token");
 
-    const respuesta = await fetch("http://127.0.0.1:8000/equipos", {
+    const respuesta = await fetch("https://runfun-0epk.onrender.com/equipos", {
         headers: {
             "Authorization": "Bearer " + token
         }
@@ -130,7 +130,7 @@ async function verEquipos() {
     const token = localStorage.getItem("token");
 
     const respuesta = await fetch(
-        `http://127.0.0.1:8000/equipos/${equipoId}/unirse`,
+        `https://runfun-0epk.onrender.com/equipos/${equipoId}/unirse`,
         {
             method: "POST",
             headers: {

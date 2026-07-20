@@ -2,7 +2,7 @@ function invitarAmigo() {
 
     const userId = localStorage.getItem("user_id");
 
-    const link = `http://localhost:5500/invite?user=${userId}`;
+    const link = `https://runfun-0epk.onrender.com/invite?user=${userId}`;
 
     const html = `
         <div class="top-bar">

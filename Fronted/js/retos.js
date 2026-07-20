@@ -130,7 +130,7 @@ async function guardarReto() {
     const token = localStorage.getItem("token");
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/retos",
+        "https://runfun-0epk.onrender.com/retos",
         {
             method: "POST",
             headers: {
@@ -187,7 +187,7 @@ async function guardarRetoEquipo() {
 
 
     const respuesta = await fetch(
-        `http://127.0.0.1:8000/retos-equipo?equipo_id=${equipo_id}`,
+        `https://runfun-0epk.onrender.com/retos-equipo?equipo_id=${equipo_id}`,
         {
 
             method:"POST",
@@ -237,7 +237,7 @@ async function obtenerRetoActivo() {
     const token = localStorage.getItem("token");
 
     const respuesta = await fetch(
-        "http://127.0.0.1:8000/retos/activo",
+        "https://runfun-0epk.onrender.com/retos/activo",
         {
             headers: {
                 "Authorization": "Bearer " + token
