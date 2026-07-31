@@ -1,11 +1,7 @@
-*{
-
-box-sizing:content-box;
-font-family:Arial,sans-serif;
-
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-
-
 
 body{
 
@@ -21,27 +17,15 @@ color:#1a1919;
 
 /* LOGIN */
 
-
-.login-container{
-
-width:100%;
-
-max-width:450px;
-
-background:white;
-
-margin:auto;
-
-margin-top:80px;
-
-padding:30px;
-
-border-radius:25px;
-
-text-align:center;
-
-box-shadow:0 10px 30px #ccc;
-
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px #ccc;
 }
 
 
@@ -407,4 +391,49 @@ max-width:400px;
     gap: 15px;             /* Añade 15px de espacio exacto tanto a los lados como ABAJO */
     justify-content: center; /* Opcional: centra los botones en la pantalla */
   }
+
+ /* =========================
+   RESPONSIVE - CELULARES
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .login-container {
+        width: auto;
+        margin: 30px 15px;
+        padding: 20px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    button {
+        max-width: 100%;
+    }
+
+    header {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .principal-card {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .principal-card h1 {
+        font-size: 40px;
+    }
+
+    .card,
+    .green-card {
+        margin: 10px;
+        padding: 18px;
+    }
+
+    .contenedor-botones {
+        gap: 10px;
+    }
+}
 
