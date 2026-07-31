@@ -12,7 +12,7 @@ from app.database import get_db
 
 SECRET_KEY = "runfun_secreto_cambiar_despues"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
+ACCESS_TOKEN_EXPIRE_MINUTES = 60*24*7
 
 
 # -------------------------
