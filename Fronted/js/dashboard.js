@@ -50,10 +50,13 @@ async function cargarDashboard() {
         // ========= PROGRESO DEL RETO =========
 
         const kmActual = data.reto.km_actual || 0;
-        const kmObjetivo = data.reto.km_objetivo || 5;
+const kmObjetivo = data.reto.km_objetivo || 5;
 
-        document.getElementById("km-actual").innerText = kmActual;
-        document.getElementById("km-objetivo").innerText = kmObjetivo;
+document.getElementById("km-actual").innerText =
+    Number(kmActual).toFixed(2);
+
+document.getElementById("km-objetivo").innerText =
+    Number(kmObjetivo).toFixed(2);
 
         const porcentaje = Math.min(
             (kmActual / kmObjetivo) * 100,
