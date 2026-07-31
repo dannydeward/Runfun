@@ -70,48 +70,7 @@ let posicionFin = null;
 let horaInicio = null;
 let horaFin = null;
 
-function iniciarCarrera() {
-
-    if (!navigator.geolocation) {
-
-        alert("Tu dispositivo no soporta GPS.");
-        return;
-    }
-
-    document.getElementById("estadoCarrera").innerText =
-        "Estado: Obteniendo ubicación...";
-
-    navigator.geolocation.getCurrentPosition(
-
-        function(posicion) {
-
-            posicionInicio = {
-                lat: posicion.coords.latitude,
-                lng: posicion.coords.longitude
-            };
-            horaInicio = new Date(); 
-
-            document.getElementById("estadoCarrera").innerText =
-                "🟢 Carrera iniciada";
-
-            document.getElementById("btnFinalizar").disabled = false;
-
-            console.log("Inicio:", posicionInicio);
-
-        },
-
-        function(error) {
-
-            alert("No fue posible obtener la ubicación.");
-
-            console.log(error);
-
-        }
-
-    );
-
-}
-
+function iniciarCarrera() { if (!navigator.geolocation) { alert("Tu dispositivo no soporta GPS."); return; } document.getElementById("estadoCarrera").innerText = "Estado: Obteniendo ubicación..."; navigator.geolocation.getCurrentPosition( function(posicion) { posicionInicio = { lat: posicion.coords.latitude, lng: posicion.coords.longitude }; horaInicio = new Date(); document.getElementById("estadoCarrera").innerText = "🟢 Carrera iniciada"; document.getElementById("btnFinalizar").disabled = false; console.log("Inicio:", posicionInicio); }, function(error) { console.log("ERROR GPS:", error); alert( "Error GPS\n" + "Código: " + error.code + "\n" + "Mensaje: " + error.message ); } ); }
 async function finalizarCarrera() {
 
     navigator.geolocation.getCurrentPosition(
