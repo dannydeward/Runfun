@@ -55,6 +55,14 @@ async function abrirRegistro(){
 
 }
 
+function cerrarSesion() {
+
+    localStorage.removeItem("token");
+    localStorage.removeItem("user_id");
+
+    document.getElementById("app-view").style.display = "none";
+    document.getElementById("login-view").style.display = "block";
+}
 
 async function volverLogin(){
 
