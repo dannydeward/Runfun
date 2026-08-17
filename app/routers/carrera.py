@@ -157,9 +157,11 @@ def historial_carreras(
     usuario_id: int,
     db: Session = Depends(get_db)
 ):
-
-    carreras = db.query(Carrera).filter(
-        Carrera.usuario_id == usuario_id
-    ).all()
+    carreras = (
+        db.query(Carrera)
+        .filter(Carrera.usuario_id == usuario_id)
+        .order_by(Carrera.fecha.asc())  # Orden cronológico fundamental para la línea
+        .all()
+    )
 
     return carreras

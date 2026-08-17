@@ -18,11 +18,11 @@ async function cargarDashboard() {
 
             retoCard.innerHTML = `
 
-                <h4 style="color:black;">
+                <h4 style="color:yellow;">
                     ${reto.km_actual} / ${reto.km_objetivo} km
                 </h4>
 
-                <p style="color:black;">
+                <p style="color:yellow;">
                     Plazo: ${reto.plazo_valor} ${reto.plazo_unidad}
                 </p>
 

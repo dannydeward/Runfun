@@ -1,0 +1,14 @@
+observaciones
+
+no tiene boton para cerrar la app
+le falta ser responsibe
+la pantala de ultimos siente dias no  se actualiza esta fija funciona
+lo km tienen que reducirse a 2 decimales
+que se guarde la contraseña automaticamente
+revisar porque se cierra la sesion al rato de estar abierta
+mejorar el UX , nostrar ejmplos de pasitos 
+actualizacion automatica , cuando se cambien los retos
+historial de usuario por reto
+
+
+
