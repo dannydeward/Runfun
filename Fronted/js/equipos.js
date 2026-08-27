@@ -1,12 +1,15 @@
 async function abrirEquipo(){
 
    const html =(`
+       <div class ="perfil-container">
         <h3>👥 Equipo</h3>
 
         <button onclick="mostrarCrearEquipo()">➕ Crear equipo</button>
         <button onclick="verEquipos()">🔗 Unirse a equipo</button>
         <button onclick="backScreen()">⬅</button>
         <button onclick="salir()">🚪</button>
+
+        </div>
     `);
     setScreen(html);
 }
@@ -19,9 +22,9 @@ function mostrarCrearEquipo() {
             <button onclick="salir()">🚪</button>
         </div>
 
-        <h2>👥 Crear equipo</h2>
+        <h2 >👥 Crear equipo</h2>
 
-        <input
+        <input 
             id="nombreEquipo"
             type="text"
             placeholder="Nombre del equipo"
@@ -91,6 +94,7 @@ async function cargarEquipos() {
 
   equipos.forEach(e => {
     html += `
+    <div class ="perfil-container">
         <div style="padding:10px;border-bottom:1px solid #ddd">
             <b>${e.nombre}</b><br>
             <small>${e.descripcion || ""}</small><br><br>
@@ -111,6 +115,7 @@ async function cargarEquipos() {
 <button onclick="backScreen()">⬅</button>
 
         </div>
+        </div>  
     `;
 });   
 
@@ -170,6 +175,7 @@ async function verMiEquipo(equipoId) {
     }
 
     let html = `
+     <div class="perfil-container">
         <div class="top-bar">
             <button onclick="backScreen()">⬅</button>
             <button onclick="salir()">🚪</button>
@@ -198,6 +204,7 @@ async function verMiEquipo(equipoId) {
         <hr>
 
         <h3>Integrantes</h3>
+        </div>
     `;
 
     data.ranking.forEach(u => {
@@ -300,7 +307,7 @@ async function abrirRanking(equipoId) {
     data.forEach(u => {
 
         html += `
-            <div class="card">
+            <div class="perfil-container">
                 <b>${u.nombre}</b> ${u.apellido || ""}<br>
                 <p>${u.km} km</p>
             </div>
