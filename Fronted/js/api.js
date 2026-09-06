@@ -187,3 +187,46 @@ async function apiCrearCarrera(token, carrera) {
     };
 
 }
+
+// ===============================
+// CHAT
+// ===============================
+
+async function apiEnviarMensaje(token, contenido) {
+
+    const respuesta = await fetch(
+        "https://runfun-0epk.onrender.com/chat/mensajes",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": "Bearer " + token
+            },
+            body: new URLSearchParams({
+                contenido: contenido
+            })
+        }
+    );
+
+    const data = await respuesta.json();
+
+    return {
+        ok: respuesta.ok,
+        data
+    };
+}
+
+
+async function apiObtenerMensajes() {
+
+    const respuesta = await fetch(
+        "https://runfun-0epk.onrender.com/chat/mensajes"
+    );
+
+    const data = await respuesta.json();
+
+    return {
+        ok: respuesta.ok,
+        data
+    };
+}

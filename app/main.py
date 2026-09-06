@@ -18,7 +18,10 @@ from app.routers.ranking import router as ranking_router
 from fastapi.staticfiles import StaticFiles
 
 from app.models.reto import Reto
+
+from app.models.mensaje import Mensaje
 from app.routers.reto import router as reto_router
+from app.routers.chat import router as chat_router
 
 
 app = FastAPI()
@@ -46,6 +49,7 @@ app.include_router(team_router)
 app.include_router(carrera_router)
 app.include_router(ranking_router)
 app.include_router(reto_router)
+app.include_router(chat_router)
 
 
 
