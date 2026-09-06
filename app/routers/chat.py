@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Form
 from sqlalchemy.orm import Session
 
 from app.database import SessionLocal
@@ -20,7 +20,7 @@ def get_db():
 
 @router.post("/chat/mensajes")
 def enviar_mensaje(
-    contenido: str,
+    contenido: str = Form(...),
     usuario_actual: User = Depends(obtener_usuario_actual),
     db: Session = Depends(get_db)
 ):
