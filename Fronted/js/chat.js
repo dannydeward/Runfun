@@ -33,6 +33,7 @@ function abrirChat() {
 }
 
 async function cargarMensajesChat() {
+    console.log("ACTUALIZANDO CHAT");
 
     const respuesta = await apiObtenerMensajes();
 
