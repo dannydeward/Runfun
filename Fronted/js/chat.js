@@ -29,6 +29,7 @@ function abrirChat() {
     setScreen(html);
 
     cargarMensajesChat();
+    setInterval(cargarMensajesChat, 2000);
 }
 
 async function cargarMensajesChat() {
@@ -47,7 +48,7 @@ async function cargarMensajesChat() {
     respuesta.data.forEach(mensaje => {
 
         const elemento = document.createElement("p");
-        
+
     elemento.innerText =
     mensaje.nombre + " " + mensaje.apellido + ": " +
     mensaje.contenido;
