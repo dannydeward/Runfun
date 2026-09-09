@@ -47,10 +47,10 @@ async function cargarMensajesChat() {
     respuesta.data.forEach(mensaje => {
 
         const elemento = document.createElement("p");
-
-        elemento.innerText =
-            "Usuario " + mensaje.usuario_id + ": " +
-            mensaje.contenido;
+        
+    elemento.innerText =
+    mensaje.nombre + " " + mensaje.apellido + ": " +
+    mensaje.contenido;
 
         lista.appendChild(elemento);
     });
@@ -74,13 +74,9 @@ async function enviarMensajeChat() {
 
     if (respuesta.ok) {
 
-        input.value = "";
+    input.value = "";
 
-        alert("Mensaje enviado");
+    cargarMensajesChat();
 
-    } else {
-
-        alert("No se pudo enviar el mensaje.");
-
-    }
+}
 }

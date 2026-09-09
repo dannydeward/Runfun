@@ -48,9 +48,21 @@ def obtener_mensajes(
 ):
 
     mensajes = (
-        db.query(Mensaje)
+        db.query(Mensaje, User.nombre, User.apellido)
+        .join(User, Mensaje.usuario_id == User.id)
         .order_by(Mensaje.fecha.asc())
         .all()
     )
 
-    return mensajes
+    return [
+        {
+            "id": mensaje.id,
+            "usuario_id": mensaje.usuario_id,
+            "nombre": nombre,
+            "apellido": apellido,
+            "contenido": mensaje.contenido,
+            "fecha": mensaje.fecha
+        }
+        for mensaje, nombre, apellido in mensajes
+    ]
+
